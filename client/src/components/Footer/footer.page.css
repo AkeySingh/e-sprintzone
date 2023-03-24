@@ -1,0 +1,20 @@
+.parent {
+  text-align: start;
+}
+
+.innerChild {
+  transition: all 0.3s;
+  padding: 10px 30px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+.innerChild:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #7bd2fb;
+}
+
+.footer-logo {
+  padding: 0px 50px 20px 50px;
+}

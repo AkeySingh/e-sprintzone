@@ -1,0 +1,18 @@
+:root {
+  --green: #035b3e;
+  --white: #ffffff;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-around;
+}
+
+.child-btn {
+  font-weight: 600;
+  font-size: 1em;
+  margin: 0px 15px;
+}
+.MuiToolbar-root {
+  background-color: var(--green);
+}
