@@ -18,33 +18,25 @@ const getAllUser = async (req, res, next) => {
 }
 
 const addAllUser = async (req, res, next) => {
-  bcrypt.hash(req.body.password, 20, (err, hash) => {
-    if (err) {
-      res.status(501).json({ error: err })
-    } else {
-      const user = new User({
-        _id: new mongoose.Types.ObjectId(),
-        username: req.body.username,
-        password: hash,
-        phone: req.body.phone,
-        email: req.body.email,
-        userType: req.body.userType,
-      })
+  if (false) {
+    console.log('if in :', err)
+    res.status(501).json({ error: err })
+  } else {
+    const user = new User({
+      _id: new mongoose.Types.ObjectId(),
+      username: req.body.username,
+      password: 'hash',
+      phone: req.body.phone,
+      email: req.body.email,
+      userType: req.body.userType,
+    })
 
-      user.save().then((result) => {
-        res
-          .status(201)
-          .json({
-            new_user: result,
-          })
-          .catch((err) => {
-            res.status(500).json({
-              error: err,
-            })
-          })
+    user.save().then((result) => {
+      res.status(201).json({
+        new_user: result,
       })
-    }
-  })
+    })
+  }
 }
 
 const updateUser = function (req, res) {
@@ -61,4 +53,5 @@ const updateUser = function (req, res) {
 module.exports = {
   getAllUser,
   updateUser,
+  addAllUser,
 }
