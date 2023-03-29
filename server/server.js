@@ -1,18 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose')
-require('dotenv').config()
 const app = express()
-const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(express.json())
+
+app.use('/api/users', require('./routes/user-routes'))
+app.use('/api', require('./routes/todo-list-routes'))
 
 mongoose.set('strictQuery', false)
 mongoose
-  .connect(
-    `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.o6319wy.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
-  )
+  .connect('mongodb+srv://akey9009:akey9009@cluster0.o6319wy.mongodb.net/todo_list?retryWrites=true&w=majority')
   .then(() => {
     console.log('connected to MongoDB')
     app.listen(3000, () => {

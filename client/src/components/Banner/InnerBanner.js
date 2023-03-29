@@ -75,7 +75,7 @@ const InnerBanner = () => {
               <Box
                 component='img'
                 sx={{
-                  height: 300,
+                  height: 500,
                   display: 'block',
                   maxWidth: '100%',
                   overflow: 'hidden',
@@ -88,7 +88,7 @@ const InnerBanner = () => {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      <h1>hello ram pal singh</h1>
+
       {/* <MobileStepper
         steps={maxSteps}
         position='static'
