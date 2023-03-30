@@ -18,40 +18,61 @@ const getAllUser = async (req, res, next) => {
 }
 
 const addAllUser = async (req, res, next) => {
-  if (false) {
-    console.log('if in :', err)
-    res.status(501).json({ error: err })
-  } else {
-    const user = new User({
-      _id: new mongoose.Types.ObjectId(),
-      username: req.body.username,
-      password: 'hash',
-      phone: req.body.phone,
-      email: req.body.email,
-      userType: req.body.userType,
-    })
-
-    user.save().then((result) => {
-      res.status(201).json({
-        new_user: result,
+  bcrypt.hash(req.body.password, 1, (err, hash) => {
+    if (err) {
+      res.status(501).json({ error: err })
+    } else {
+      const user = new User({
+        _id: new mongoose.Types.ObjectId(),
+        username: req.body.username,
+        password: hash,
+        phone: req.body.phone,
+        email: req.body.email,
+        userType: req.body.userType,
       })
-    })
-  }
+
+      user
+        .save()
+        .then((result) => {
+          res.status(201).json({
+            new_user: result,
+          })
+        })
+        .catch((err) => {
+          res.send({
+            message: err,
+          })
+        })
+    }
+  })
 }
 
-const updateUser = function (req, res) {
-  console.log(req.body)
-  User.findOneAndUpdate(req.param.id, { $set: req.body }, function (err, result) {
-    if (err) {
-      console.log(err)
+const updateUser = async function (req, res) {
+  const data = await User.findOneAndUpdate(
+    { _id: req.params.id },
+    {
+      $set: {
+        username: req.body.username,
+        password: req.body.password,
+        phone: req.body.phone,
+        email: req.body.email,
+        userType: req.body.userType,
+      },
     }
-    console.log('RESULT: ' + result)
-  })
-  res.send('Done')
+  )
+  return res.send(data)
+}
+
+const deleteUser = async (req, res, next) => {
+  User.findOneAndDelete({ _id: req.params.id })
+    .exec()
+    .then((response) => res.json())
+    .catch((err) => next(err))
 }
 
 module.exports = {
   getAllUser,
   updateUser,
   addAllUser,
+  deleteUser,
 }
