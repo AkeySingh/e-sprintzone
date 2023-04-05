@@ -1,0 +1,34 @@
+.product_cards {
+  padding: 2%;
+  background-color: pink;
+}
+.top_product_heading {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.products_body {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  gap: 10px;
+  background-color: red;
+}
+.card_body {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  background-color: blue;
+}
+
+.card_image {
+  background-color: yellow;
+  /* width: 100%; */
+  /* height: auto; */
+}
+
+.card_image img {
+  width: 100%;
+  height: 200px;
+}

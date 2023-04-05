@@ -1,2 +1,2 @@
-export const bgGreen = '#035b3e'
-export const colorWhite = '#FFFF'
+export const bgPink = 'pink'
+export const colorPink = 'black'

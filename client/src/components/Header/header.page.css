@@ -1,6 +1,6 @@
 :root {
-  --green: #035b3e;
-  --white: #ffffff;
+  --rootBackgroundColor: pink;
+  --rootFontColor: #000000;
 }
 
 .parent {
@@ -14,5 +14,10 @@
   margin: 0px 15px;
 }
 .MuiToolbar-root {
-  background-color: var(--green);
+  background-color: var(--rootBackgroundColor);
+  color: var(--rootFontColor);
+}
+
+.singup_button:hover ~ .child-btn {
+  background-color: red;
 }

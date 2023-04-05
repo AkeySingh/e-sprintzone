@@ -14,7 +14,7 @@ const Header = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
         <Toolbar>
-          <IconButton size='large' edge='start' color='inherit' aria-label='menu' sx={{ mr: 2 }}>
+          <IconButton size='large' edge='start' color='' aria-label='menu' sx={{ mr: 2 }}>
             <MenuIcon className='child-btn' />
           </IconButton>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
@@ -35,7 +35,9 @@ const Header = () => {
             </Button>
           </Typography>
 
-          <Button color='inherit'>Sign Up</Button>
+          <Button color='inherit' className='singup_button'>
+            Sign Up
+          </Button>
           <Button color='inherit'>Login</Button>
         </Toolbar>
       </AppBar>
