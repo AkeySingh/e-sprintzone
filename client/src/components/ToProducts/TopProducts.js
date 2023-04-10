@@ -6,17 +6,14 @@ import './topProduct.page.css'
 import ProductCard from './ProductCard'
 
 const TopProducts = () => {
-  const [value, setValue] = React.useState(0)
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
-
   return (
     <>
       <div className='product_cards'>
-        <p className='top_product_heading'>Top Products</p>
-        <ProductCard />
+        <p className='top_product_heading'>Best selling products</p>
+
+        <div className='products_body'>
+          <ProductCard />
+        </div>
       </div>
     </>
   )

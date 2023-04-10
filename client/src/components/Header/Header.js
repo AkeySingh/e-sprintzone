@@ -8,6 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Grid from '@mui/material/Unstable_Grid2'
 import Box from '@mui/material/Box'
 import './header.page.css'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -34,11 +35,15 @@ const Header = () => {
               <div className='child-btn'>News</div>
             </Button>
           </Typography>
+          <Link to='/signup'>
+            <Button color='inherit' className='signup_button'>
+              Sign Up
+            </Button>
+          </Link>
 
-          <Button color='inherit' className='singup_button'>
-            Sign Up
-          </Button>
+          {/* <Link to='/login'> */}
           <Button color='inherit'>Login</Button>
+          {/* </Link> */}
         </Toolbar>
       </AppBar>
     </Box>

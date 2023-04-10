@@ -5,12 +5,11 @@
   background-image: url('../../images/gitft01.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
-  transition: all 0.3s;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 .static_banner:hover {
-  background-image: url('../../images/gift02.jpg');
-  background-repeat: no-repeat;
-  cursor: pointer;
+  transform: scale(1.04);
 }
 
 .shop_now_btn {

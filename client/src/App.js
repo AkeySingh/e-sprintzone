@@ -1,13 +1,10 @@
 import './App.css'
-import MainBanner from './components/Banner'
-import MainFooter from './components/Footer'
 import RouterPage from './Routers'
 
-function App() {
+function App(props) {
   return (
     <div className='App'>
       <RouterPage />
-      <MainFooter />
     </div>
   )
 }

@@ -1,47 +1,31 @@
 import React from 'react'
+import MultiActionAreaCard from './materialPage'
+import { useSelector, useDispatch } from 'react-redux'
+import { getCardList } from '../../Store/Actions/cardAction'
+import { useEffect } from 'react'
 
 const ProductCard = () => {
+  const allProductLsit = useSelector((state) => state.card)
+  const dispatch = useDispatch()
+
+  // --- get all product List -----------------------
+  useEffect(() => {
+    dispatch(getCardList())
+  }, [])
+
+  console.log(allProductLsit)
   return (
-    <div className='products_body'>
-      <div className='card_body'>
-        <div className='card_image'>
-          <img src='.gift02.jpg' />
-        </div>
-
-        <div className='card_content'>
-          <div> discription</div>
-          <div className='card_price'>Price </div>
-        </div>
-      </div>
-      <div className='card_body'>
-        <div className='card_image'>
-          <img src='https://fastly.picsum.photos/id/935/200/200.jpg?hmac=WNkIQ-NNhosb-4Qfz8Tixwp7-HVS540Z2dS0VDyJ5ac' />
-        </div>
-
-        <div className='card_content'>
-          <div className='card_price'>Price </div>
-        </div>
-      </div>
-      <div className='card_body'>
-        <div className='card_image'>
-          <img src='https://fastly.picsum.photos/id/935/200/200.jpg?hmac=WNkIQ-NNhosb-4Qfz8Tixwp7-HVS540Z2dS0VDyJ5ac' />
-        </div>
-
-        <div className='card_content'>
-          <div className='card_price'>Price </div>
-        </div>
-      </div>
-
-      <div className='card_body'>
-        <div className='card_image'>
-          <img />
-        </div>
-
-        <div className='card_content'>
-          <div className='card_price'>Price </div>
-        </div>
-      </div>
-    </div>
+    <>
+      {allProductLsit.allList.length > 0
+        ? allProductLsit.allList.map((item, index) => {
+            return (
+              <>
+                <MultiActionAreaCard key={index} details={item} />
+              </>
+            )
+          })
+        : 'null'}
+    </>
   )
 }
 

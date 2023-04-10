@@ -18,6 +18,6 @@
   color: var(--rootFontColor);
 }
 
-.singup_button:hover ~ .child-btn {
+.signup_button:hover ~ .child-btn {
   background-color: red;
 }
