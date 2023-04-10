@@ -66,8 +66,8 @@ const updateUser = async function (req, res) {
 const deleteUser = async (req, res, next) => {
   User.findOneAndDelete({ _id: req.params.id })
     .exec()
-    .then((response) => res.json())
-    .catch((err) => next(err))
+    .then((response) => res.send(response))
+    .catch((err) => res.send(err))
 }
 
 module.exports = {

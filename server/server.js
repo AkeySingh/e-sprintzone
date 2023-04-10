@@ -6,6 +6,7 @@ app.use(express.json())
 
 app.use('/api', require('./routes/user-routes'))
 app.use('/api', require('./routes/todo-list-routes'))
+app.use('/api', require('./routes/product-routes'))
 
 mongoose.set('strictQuery', false)
 mongoose
