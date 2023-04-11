@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
@@ -9,8 +9,13 @@ import Grid from '@mui/material/Unstable_Grid2'
 import Box from '@mui/material/Box'
 import './header.page.css'
 import { Link } from 'react-router-dom'
+import Signup from '../Authentication/Signup'
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const handleOpen = () => setIsOpen(true)
+  const handleClose = () => setIsOpen(false)
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
@@ -35,16 +40,14 @@ const Header = () => {
               <div className='child-btn'>News</div>
             </Button>
           </Typography>
-          <Link to='/signup'>
-            <Button color='inherit' className='signup_button'>
-              Sign Up
-            </Button>
-          </Link>
 
-          {/* <Link to='/login'> */}
+          <Button color='inherit' onClick={() => handleOpen()} className='signup_button'>
+            Sign Up
+          </Button>
           <Button color='inherit'>Login</Button>
-          {/* </Link> */}
         </Toolbar>
+
+        <Signup isOpen={isOpen} handleClose={handleClose} />
       </AppBar>
     </Box>
   )

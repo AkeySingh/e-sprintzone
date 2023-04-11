@@ -1,0 +1,31 @@
+.flext-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.signup_button_box {
+  padding: 30px;
+}
+
+.signup_button_box Button {
+  display: inline-block;
+  margin: 5px;
+}
+
+.cross {
+  padding: 3px;
+  position: fixed;
+  top: 4px;
+  right: 4px;
+  color: red;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cross:hover {
+  font-size: large;
+}
+.cross:active {
+  color: blue;
+}

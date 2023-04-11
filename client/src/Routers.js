@@ -5,7 +5,6 @@ import MainTopProduct from './components/ToProducts'
 import MainFooter from './components/Footer'
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home/Home'
-// import SignUp from './components/'
 
 const RouterPage = () => {
   return (
@@ -13,7 +12,6 @@ const RouterPage = () => {
       <MainHeader />
       <Routes>
         <Route path='/' element={<Home />} />
-        {/* <Route path='/signup' element={<SignUp />} /> */}
       </Routes>
       <MainFooter />
     </>
