@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState, memo } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+// import { debounce } from 'lodash'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import './auth.page.css'
+import { handleChange, addUser } from '../../Store/Actions/signupAction'
 
 import { FaSkullCrossbones } from 'react-icons/fa'
 
@@ -21,6 +24,18 @@ const style = {
 }
 
 const Signup = (props) => {
+  const dispatch = useDispatch()
+  const formData = useSelector((state) => state.signup)
+
+  const InputChange = (e) => {
+    const { name, value } = e.target
+    dispatch(handleChange(name, value))
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(addUser(formData))
+  }
+
   return (
     <>
       <Modal
@@ -31,22 +46,64 @@ const Signup = (props) => {
       >
         <Box className='modal_box' sx={{ ...style }} variant='rounded'>
           <div className='flext-box'>
-            <TextField id='standard-basic' label='First Name' variant='standard' />
-            <TextField id='standard-basic' label='Last Name' variant='standard' />
+            <TextField
+              onChange={(e) => InputChange(e)}
+              value={formData.firstName}
+              name='firstName'
+              id='standard-basic'
+              label='First Name'
+              variant='standard'
+            />
+            <TextField
+              onChange={(e) => InputChange(e)}
+              value={formData.lastName}
+              name='lastName'
+              id='standard-basic'
+              label='Last Name'
+              variant='standard'
+            />
           </div>
 
           <div className='flext-box'>
-            <TextField id='standard-basic' label='Email' variant='standard' />
-            <TextField id='standard-basic' label='Phone' variant='standard' />
+            <TextField
+              onChange={(e) => InputChange(e)}
+              value={formData.email}
+              name='email'
+              id='standard-basic'
+              label='Email'
+              variant='standard'
+            />
+            <TextField
+              onChange={(e) => InputChange(e)}
+              value={formData.phone}
+              name='phone'
+              id='standard-basic'
+              label='Phone'
+              variant='standard'
+            />
           </div>
 
           <div className='flext-box'>
-            <TextField id='standard-basic' label='Password' variant='standard' helperText='2222222222' />
-            <TextField id='standard-basic' label='Confirm Password' variant='standard' />
+            <TextField
+              onChange={(e) => InputChange(e)}
+              value={formData.password}
+              name='password'
+              id='standard-basic'
+              label='Password'
+              variant='standard'
+            />
+            <TextField
+              onChange={(e) => InputChange(e)}
+              value={formData.confirmPassword}
+              name='confirmPassword'
+              id='standard-basic'
+              label='Confirm Password'
+              variant='standard'
+            />
           </div>
 
           <div className='signup_button_box'>
-            <Button variant='outlined' color='secondary'>
+            <Button variant='outlined' color='secondary' onClick={(e) => handleSubmit(e)}>
               Submit
             </Button>
             <Button onClick={() => props.handleClose()} variant='outlined' color='error'>
@@ -62,4 +119,4 @@ const Signup = (props) => {
   )
 }
 
-export default Signup
+export default memo(Signup)

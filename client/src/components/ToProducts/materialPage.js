@@ -6,16 +6,7 @@ import Typography from '@mui/material/Typography'
 import { CardActionArea, CardActions } from '@mui/material'
 import Grid from '@mui/material/Grid'
 
-// const Item = styled()(({}) => ({
-// backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-// ...theme.typography.body2,
-// padding: theme.spacing(1),
-// textAlign: 'center',??
-// color: theme.palette.text.secondary,
-// }))
-
 export default function MultiActionAreaCard({ details }) {
-  console.log(details)
   return (
     <Card sx={{ maxWidth: 400 }}>
       <CardActionArea>

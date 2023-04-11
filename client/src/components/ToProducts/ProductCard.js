@@ -7,13 +7,11 @@ import { useEffect } from 'react'
 const ProductCard = () => {
   const allProductLsit = useSelector((state) => state.card)
   const dispatch = useDispatch()
-
   // --- get all product List -----------------------
   useEffect(() => {
     dispatch(getCardList())
   }, [])
 
-  console.log(allProductLsit)
   return (
     <>
       {allProductLsit.allList.length > 0

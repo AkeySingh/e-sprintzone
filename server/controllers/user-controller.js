@@ -26,9 +26,10 @@ const addAllUser = async (req, res, next) => {
         _id: new mongoose.Types.ObjectId(),
         username: req.body.username,
         password: hash,
+        confirmPassword: hash,
         phone: req.body.phone,
         email: req.body.email,
-        userType: req.body.userType,
+        lastName: req.body.lastName,
       })
 
       user
