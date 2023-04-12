@@ -11,7 +11,7 @@ export const handleChange = (name, value) => async (dispatch) => {
 export const addUser = (data) => async (dispatch) => {
   const newData = JSON.stringify(data)
   axios
-    .post('http://localhost:3000/api/user/add', data, {
+    .post('/api/user/add', data, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
