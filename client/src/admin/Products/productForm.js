@@ -12,7 +12,7 @@ const ProductForm = (props) => {
         <TextField
           // onChange={(e) => InputChange(e)}
           // value={formData.firstName}
-          name='firstName'
+          name='productName'
           id='standard-basic'
           label='First Name'
           variant='standard'
@@ -20,7 +20,7 @@ const ProductForm = (props) => {
         <TextField
           // onChange={(e) => InputChange(e)}
           // value={formData.lastName}
-          name='lastName'
+          name=''
           id='standard-basic'
           label='Last Name'
           variant='standard'
