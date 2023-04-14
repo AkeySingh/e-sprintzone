@@ -10,11 +10,12 @@ import Box from '@mui/material/Box'
 import './header.page.css'
 import { Link } from 'react-router-dom'
 import Signup from '../Authentication/Signup'
+import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const handleOpen = () => setIsOpen(true)
-  const handleClose = () => setIsOpen(false)
+  const dispatch = useDispatch()
+  const formData = useSelector((state) => state.signup)
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -25,10 +26,14 @@ const Header = () => {
           </IconButton>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
             <Button color='inherit'>
-              <div className='child-btn'>Home</div>
+              <Link className='Link_item' to='/'>
+                <div className='child-btn'>Home</div>
+              </Link>
             </Button>
             <Button color='inherit'>
-              <div className='child-btn'>shop</div>
+              <Link className='Link_item' to='/shop'>
+                <div className='child-btn'>shop</div>
+              </Link>
             </Button>
             <Button color='inherit'>
               <div className='child-btn'>About</div>
@@ -41,13 +46,17 @@ const Header = () => {
             </Button>
           </Typography>
 
-          <Button color='inherit' onClick={() => handleOpen()} className='signup_button'>
+          <Button
+            color='inherit'
+            onClick={() => dispatch({ type: 'Is_OPEN_MODEL', payload: true })}
+            className='signup_button'
+          >
             Sign Up
           </Button>
           <Button color='inherit'>Login</Button>
         </Toolbar>
 
-        <Signup isOpen={isOpen} handleClose={handleClose} />
+        <Signup isOpen={formData.isOpen} handleClose={() => dispatch({ type: 'Is_OPEN_MODEL', payload: false })} />
       </AppBar>
     </Box>
   )

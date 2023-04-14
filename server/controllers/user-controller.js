@@ -37,6 +37,7 @@ const addAllUser = async (req, res, next) => {
         .then((result) => {
           res.status(201).json({
             new_user: result,
+            message: 'User Add Successfully',
           })
         })
         .catch((err) => {

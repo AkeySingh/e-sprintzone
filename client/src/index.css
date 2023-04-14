@@ -9,3 +9,24 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
 }
+.Link_item {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+
+.Link_item:hover {
+  color: rgb(42, 86, 248);
+}
+
+.content-container {
+  position: relative;
+  top: 80px;
+  left: 250px;
+}
+
+.form_container {
+  width: 80%;
+  overflow: hidden;
+  padding: 50px;
+}

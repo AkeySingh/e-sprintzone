@@ -1,19 +1,37 @@
 import React from 'react'
 import MainHeader from './components/Header'
-import MainBanner from './components/Banner'
-import MainTopProduct from './components/ToProducts'
 import MainFooter from './components/Footer'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './components/Home/Home'
 
+//-------------------admin Routes ----------------------------------------------------
+import AdminHeader from './admin/AdminHeader/AdminHeader'
+import Product from './admin/Products'
+import Demo from './admin/AdminHeader/Demo'
+
 const RouterPage = () => {
+  const location_route = useLocation()
+  const isPublic = location_route.pathname.includes('admin')
   return (
     <>
-      <MainHeader />
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
-      <MainFooter />
+      {isPublic ? (
+        <>
+          <AdminHeader />
+          <Routes>
+            <Route path='/admin/null' element={<Demo />} />
+            <Route path='/admin/product' element={<Product />} />
+          </Routes>
+        </>
+      ) : (
+        <>
+          <MainHeader />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/shop' element={<Home />} />
+          </Routes>
+          <MainFooter />
+        </>
+      )}
     </>
   )
 }
