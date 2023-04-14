@@ -1,7 +1,17 @@
 .flext-box {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: auto auto auto;
   padding: 10px;
+}
+
+.flex-box-item {
+  padding: 20px 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.select_textarea {
+  text-align: start;
 }
 
 .signup_button_box {
