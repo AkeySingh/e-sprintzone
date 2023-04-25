@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import * as React from 'react'
 import { styled, useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
@@ -16,10 +16,12 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import { Link } from 'react-router-dom'
-//--------------------------all icons ------------------------
-import HomeWorkIcon from '@mui/icons-material/HomeWork'
-import TurnedInIcon from '@mui/icons-material/TurnedIn'
+import InboxIcon from '@mui/icons-material/MoveToInbox'
+import MailIcon from '@mui/icons-material/Mail'
+import { Routes, Route } from 'react-router-dom'
+
+//----------import admin Rotes --------------------------------
+import Product from '../Products/product'
 
 const drawerWidth = 240
 
@@ -68,11 +70,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export default function AdminDrawer() {
   const theme = useTheme()
-  const [open, setOpen] = useState(true)
-  const [routeState, setRouteState] = useState([
-    { name: 'home', icon: <HomeWorkIcon />, routeName: '/admin' },
-    { name: 'Product', icon: <TurnedInIcon />, routeName: '/admin/product' },
-  ])
+  const [open, setOpen] = React.useState(false)
+
   const handleDrawerOpen = () => {
     setOpen(true)
   }
@@ -120,25 +119,33 @@ export default function AdminDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {routeState.map((item, index) => (
-            <>
-              <Link className='Link_item' to={`${item.routeName}`}>
-                <ListItem key={item.icon}>
-                  <ListItemButton>
-                    <ListItemIcon>{item.icon}</ListItemIcon>
-                    <ListItemText primary={item.name} />
-                  </ListItemButton>
-                </ListItem>
-              </Link>
-            </>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
           ))}
         </List>
         <Divider />
+        <List>
+          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
       </Drawer>
-      {/* <Main open={open}>
+      <Main open={open} className='overflow-x-auto'>
         <DrawerHeader />
-        <Typography variant='h6'>Admin</Typography>
-      </Main> */}
+        <Routes>
+          <Route path='/admin/product' element={<Product />} />
+        </Routes>
+      </Main>
     </Box>
   )
 }

@@ -2,11 +2,7 @@ import React from 'react'
 import Product from './product'
 
 function index() {
-  return (
-    <div>
-      <Product />
-    </div>
-  )
+  return <Product />
 }
 
 export default index

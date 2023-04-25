@@ -6,7 +6,6 @@ import Home from './components/Home/Home'
 
 //-------------------admin Routes ----------------------------------------------------
 import AdminHeader from './admin/AdminHeader/AdminHeader'
-import Product from './admin/Products'
 import Demo from './admin/AdminHeader/Demo'
 
 const RouterPage = () => {
@@ -19,7 +18,7 @@ const RouterPage = () => {
           <AdminHeader />
           <Routes>
             <Route path='/admin/null' element={<Demo />} />
-            <Route path='/admin/product' element={<Product />} />
+            <Route path='/admin/null' element={<Demo />} />
           </Routes>
         </>
       ) : (
