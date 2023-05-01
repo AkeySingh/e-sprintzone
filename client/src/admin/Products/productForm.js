@@ -1,17 +1,11 @@
-import React, { useEffect, useState, memo } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState, memo } from 'react'
+import { useDispatch } from 'react-redux'
 import TextField from '@mui/material/TextField'
-import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
-// import Textarea from '@mui/joy/Textarea'
-import FormHelperText from '@mui/material/FormHelperText'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
 import Button from '@mui/material/Button'
 
 const ProductForm = (props) => {
   const dispatch = useDispatch()
-
   const [formData, setFormData] = useState({
     productName: '',
     productTitle: '',
@@ -21,15 +15,15 @@ const ProductForm = (props) => {
     category: '',
     subCategory: '',
   })
-  const [categorie, SetCategory] = useState({
-    mens: [],
-    womens: [],
-    childrens: [],
-  })
+
+  // const [categorie, SetCategory] = useState({
+  //   mens: [],
+  //   womens: [],
+  //   childrens: [],
+  // })
 
   const InputChange = (e) => {
     const { name, value } = e.target
-
     setFormData({
       ...formData,
       [name]: value,
@@ -38,8 +32,6 @@ const ProductForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    console.log(formData)
   }
 
   return (
@@ -64,7 +56,7 @@ const ProductForm = (props) => {
             id='standardN-basic'
             label='Product Title'
             variant='standard'
-          />{' '}
+          />
         </div>
         <div className='flex-box-item'>
           <TextField
@@ -94,7 +86,6 @@ const ProductForm = (props) => {
             <MenuItem value={'child'}>Children's</MenuItem>
           </TextField>
         </div>
-
         <div className='flex-box-item'>
           <TextField
             textarea

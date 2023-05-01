@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { Box } from './style.component'
-import { BsLinkedin, BsInstagram, BsFacebook, BsTwitter } from 'react-icons/bs' //
-import { MdEmail } from 'react-icons/md'
-//
+import { BsLinkedin, BsInstagram, BsFacebook, BsTwitter } from 'react-icons/bs'
 import './footer.page.css'
 
 const Footer = () => {
