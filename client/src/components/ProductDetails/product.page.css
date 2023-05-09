@@ -1,0 +1,40 @@
+.product_details {
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  row-gap: 1rem;
+}
+
+.product_details_item {
+  width: 50%;
+  padding: 10px;
+}
+
+.product_details_imageList {
+  width: 100px;
+  height: 70%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  background-color: red;
+}
+
+.product_details_imageList .list_item {
+  display: block;
+  padding: 5px;
+}
+
+.list_item .item_image {
+  width: 100px;
+  height: auto;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.main_item_image {
+  width: 100%;
+  height: auto;
+}

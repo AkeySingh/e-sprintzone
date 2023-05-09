@@ -3,6 +3,7 @@ import MainHeader from './components/Header'
 import MainFooter from './components/Footer'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './components/Home/Home'
+import ProductDetails from './components/ProductDetails'
 
 //-------------------admin Routes ----------------------------------------------------
 import AdminHeader from './admin/AdminHeader/AdminHeader'
@@ -27,6 +28,7 @@ const RouterPage = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/shop' element={<Home />} />
+            <Route path='/product/:id' element={<ProductDetails />} />
           </Routes>
           <MainFooter />
         </>
