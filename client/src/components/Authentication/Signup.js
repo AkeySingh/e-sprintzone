@@ -14,7 +14,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
+  width: '70%',
   bgcolor: 'white',
   border: '1px solid #000',
   borderRadius: '5px',
@@ -44,61 +44,82 @@ const Signup = (props) => {
         aria-describedby='child-modal-description'
       >
         <Box className='modal_box' sx={{ ...style }} variant='rounded'>
-          <div className='flext-box'>
-            <TextField
-              onChange={(e) => InputChange(e)}
-              value={formData.firstName}
-              name='firstName'
-              id='standard-basic'
-              label='First Name'
-              variant='standard'
-            />
-            <TextField
-              onChange={(e) => InputChange(e)}
-              value={formData.lastName}
-              name='lastName'
-              id='standard-basic'
-              label='Last Name'
-              variant='standard'
-            />
+          <div className='flex-box'>
+            <div className='textField'>
+              <TextField
+                className='input'
+                onChange={(e) => InputChange(e)}
+                value={formData.firstName}
+                name='firstName'
+                id='standard-basic'
+                label='First Name'
+                variant='standard'
+              />
+            </div>
+
+            <div className='textField'>
+              <TextField
+                className='input'
+                onChange={(e) => InputChange(e)}
+                value={formData.lastName}
+                name='lastName'
+                id='standard-basic'
+                label='Last Name'
+                variant='standard'
+              />
+            </div>
           </div>
 
-          <div className='flext-box'>
-            <TextField
-              onChange={(e) => InputChange(e)}
-              value={formData.email}
-              name='email'
-              id='standard-basic'
-              label='Email'
-              variant='standard'
-            />
-            <TextField
-              onChange={(e) => InputChange(e)}
-              value={formData.phone}
-              name='phone'
-              id='standard-basic'
-              label='Phone'
-              variant='standard'
-            />
+          <div className='flex-box'>
+            <div className='textField'>
+              <TextField
+                className='input'
+                onChange={(e) => InputChange(e)}
+                value={formData.email}
+                name='email'
+                id='standard-basic'
+                label='Email'
+                variant='standard'
+              />
+            </div>
+
+            <div className='textField'>
+              <TextField
+                className='input'
+                onChange={(e) => InputChange(e)}
+                value={formData.phone}
+                name='phone'
+                id='standard-basic'
+                label='Phone'
+                variant='standard'
+              />
+            </div>
           </div>
 
-          <div className='flext-box'>
-            <TextField
-              onChange={(e) => InputChange(e)}
-              value={formData.password}
-              name='password'
-              id='standard-basic'
-              label='Password'
-              variant='standard'
-            />
-            <TextField
-              onChange={(e) => InputChange(e)}
-              value={formData.confirmPassword}
-              name='confirmPassword'
-              id='standard-basic'
-              label='Confirm Password'
-              variant='standard'
-            />
+          <div className='flex-box'>
+            <div className='textField'>
+              <TextField
+                className='input'
+                onChange={(e) => InputChange(e)}
+                value={formData.password}
+                name='password'
+                id='standard-basic'
+                label='Password'
+                variant='standard'
+              />
+            </div>
+
+            <div className='textField'>
+              <TextField
+                className='input'
+                onChange={(e) => InputChange(e)}
+                value={formData.confirmPassword}
+                name='confirmPassword'
+                id='standard-basic'
+                label='Confirm Password'
+                variant='standard'
+              />
+            </div>
           </div>
 
           <div className='signup_button_box'>

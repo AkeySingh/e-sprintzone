@@ -8,6 +8,7 @@ let initialState = {
   password: '',
   confirmPassword: '',
   isOpen: false,
+  isLogInOpen: false,
 }
 
 function signupReducer(signupState = initialState, action) {
@@ -17,6 +18,8 @@ function signupReducer(signupState = initialState, action) {
       return { ...signupState, [payload.name]: payload.value }
     case 'Is_OPEN_MODEL':
       return { ...signupState, isOpen: payload }
+    case 'Is_OPEN_LOGIN_MODEL':
+      return { ...signupState, isLogInOpen: payload }
     default:
       return signupState
   }

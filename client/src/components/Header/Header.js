@@ -9,6 +9,7 @@ import Box from '@mui/material/Box'
 import './header.page.css'
 import { Link } from 'react-router-dom'
 import Signup from '../Authentication/Signup'
+import Login from '../Authentication/Login'
 import { useSelector, useDispatch } from 'react-redux'
 
 const Header = () => {
@@ -51,10 +52,16 @@ const Header = () => {
           >
             Sign Up
           </Button>
-          <Button color='inherit'>Login</Button>
+          <Button color='inherit' onClick={() => dispatch({ type: 'Is_OPEN_LOGIN_MODEL', payload: true })}>
+            Login
+          </Button>
         </Toolbar>
 
         <Signup isOpen={formData.isOpen} handleClose={() => dispatch({ type: 'Is_OPEN_MODEL', payload: false })} />
+        <Login
+          isOpen={formData.isLogInOpen}
+          handleClose={() => dispatch({ type: 'Is_OPEN_LOGIN_MODEL', payload: false })}
+        />
       </AppBar>
     </Box>
   )

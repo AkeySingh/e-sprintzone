@@ -36,8 +36,8 @@ const ProductForm = (props) => {
 
   return (
     <>
-      <div className='flex-box'>
-        <div className='flex-box-item'>
+      <div className='grid-container'>
+        <div className='grid-item'>
           <TextField
             onChange={(e) => InputChange(e)}
             fullWidth
@@ -47,7 +47,7 @@ const ProductForm = (props) => {
             variant='standard'
           />
         </div>
-        <div className='flex-box-item'>
+        <div className='grid-item'>
           <TextField
             fullWidth
             onChange={(e) => InputChange(e)}
@@ -58,7 +58,7 @@ const ProductForm = (props) => {
             variant='standard'
           />
         </div>
-        <div className='flex-box-item'>
+        <div className='grid-item'>
           <TextField
             fullWidth
             onChange={(e) => InputChange(e)}
@@ -69,7 +69,7 @@ const ProductForm = (props) => {
             variant='standard'
           />
         </div>
-        <div className='flex-box-item'>
+        <div className='grid-item'>
           <TextField
             select
             fullWidth
@@ -86,7 +86,7 @@ const ProductForm = (props) => {
             <MenuItem value={'child'}>Children's</MenuItem>
           </TextField>
         </div>
-        <div className='flex-box-item'>
+        <div className='grid-item'>
           <TextField
             textarea
             fullWidth
@@ -98,7 +98,7 @@ const ProductForm = (props) => {
             size='small'
           />
         </div>
-        <div className='flex-box-item'>
+        <div className='grid-item'>
           <Button variant='outlined' color='secondary' component='label'>
             Uplodad Image
             <input hidden accept='image/*' multiple type='file' onChange={(e) => InputChange(e)} />
@@ -107,7 +107,7 @@ const ProductForm = (props) => {
       </div>
 
       <div className='flex-box'>
-        <div className='flex-box-item'>
+        <div className='grid-item'>
           <Button variant='contained' color='success' component='label' onClick={(e) => handleSubmit(e)}>
             Submit
           </Button>

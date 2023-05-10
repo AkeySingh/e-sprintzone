@@ -15,27 +15,15 @@ const ProductDetails = () => {
                   </div>
 
                   <div>
-                    {' '}
-                    <img
-                      className='item_image'
-                      // src='https://fastly.picsum.photos/id/864/200/300.jpg?hmac=pHxnt4rXpNHIqBRpVSe-yL_pDtdwDfasgfub8GwI5mw'
-                    />
+                    <img className='item_image' />
                   </div>
 
                   <div>
-                    {' '}
-                    <img
-                      className='item_image'
-                      // src='https://fastly.picsum.photos/id/864/200/300.jpg?hmac=pHxnt4rXpNHIqBRpVSe-yL_pDtdwDfasgfub8GwI5mw'
-                    />
+                    <img className='item_image' />
                   </div>
 
                   <div>
-                    {' '}
-                    <img
-                      className='item_image'
-                      // src='https://fastly.picsum.photos/id/864/200/300.jpg?hmac=pHxnt4rXpNHIqBRpVSe-yL_pDtdwDfasgfub8GwI5mw'
-                    />
+                    <img className='item_image' />
                   </div>
                 </div>
                 <div className='product_details_image inline-block'>
@@ -43,7 +31,7 @@ const ProductDetails = () => {
                 </div>
               </div>
               <div className='product_details_item'>
-                <div> Title </div>{' '}
+                <div> Title </div>
               </div>
             </div>
           </div>
