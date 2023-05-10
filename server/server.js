@@ -10,6 +10,10 @@ app.use('/api', require('./routes/user-routes'))
 app.use('/api', require('./routes/todo-list-routes'))
 app.use('/api', require('./routes/product-routes'))
 
+app.get('/', (req, res) => {
+  res.send('Your applicaton is runnig')
+})
+
 mongoose.set('strictQuery', false)
 mongoose
   .connect('mongodb+srv://akey9009:akey9009@cluster0.qjeeoad.mongodb.net/?retryWrites=true&w=majority')
